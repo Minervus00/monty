@@ -1,5 +1,6 @@
 #include "monty.h"
 #include <stdio.h>
+#include <string.h>
 
 /**
  * print_error - print error to stderr
