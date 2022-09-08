@@ -75,7 +75,6 @@ void rotl_fct(stack_t **head, unsigned int line_number)
 	buff->n = tmp;
 }
 
-/*4*/
 /**
  * rotr_fct - rotates the stack to the bottom
  * @head: the head
@@ -106,7 +105,7 @@ void rotr_fct(stack_t **head, unsigned int line_number)
 			(buff->next)->n = tmp2;
 		}
 		buff = buff->next;
-		cnt ++;
+		cnt++;
 	}
 	(*head)->n = ((cnt % 2 == 0) ? tmp2 : tmp1);
 }
