@@ -53,6 +53,8 @@ void mul_fct(stack_t **head, unsigned int line_number);
 void mod_fct(stack_t **head, unsigned int line_number);
 void pchar_fct(stack_t **head, unsigned int line_number);
 void pstr_fct(stack_t **head, unsigned int line_number);
+void rotl_fct(stack_t **head, unsigned int line_number);
+void rotr_fct(stack_t **head, unsigned int line_number);
 void free_stack(stack_t *head);
 
 #endif /* MONTY_H */

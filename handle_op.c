@@ -72,6 +72,8 @@ int execute_line(stack_t **head, char *line, int lnum)
 		{"mod", mod_fct},
 		{"pchar", pchar_fct},
 		{"pstr", pstr_fct},
+		{"rotl", rotl_fct},
+		{"rotr", rotr_fct},
 		{NULL, NULL}
 	};
 

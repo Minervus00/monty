@@ -50,3 +50,63 @@ void pstr_fct(stack_t **head, unsigned int line_number)
 	}
 	printf("\n");
 }
+
+/**
+ * rotl_fct - rotates the stack to the top
+ * @head: the head
+ * @line_number: line_num
+ * Return: nothing
+ */
+void rotl_fct(stack_t **head, unsigned int line_number)
+{
+	stack_t *buff = *head;
+	int tmp;
+	(void) line_number;
+
+	/*exit if empty or contains only one element*/
+	if (*head == NULL || (*head)->next == NULL)
+		return;
+	tmp = (*head)->n;
+	while (buff->next)
+	{
+		buff->n = (buff->next)->n;
+		buff = buff->next;
+	}
+	buff->n = tmp;
+}
+
+/*4*/
+/**
+ * rotr_fct - rotates the stack to the bottom
+ * @head: the head
+ * @line_number: line_num
+ * Return: nothing
+ */
+void rotr_fct(stack_t **head, unsigned int line_number)
+{
+	stack_t *buff = *head;
+	int tmp1, tmp2, cnt = 1;
+	(void) line_number;
+
+	/*exit if empty or contains only one element*/
+	if (*head == NULL || (*head)->next == NULL)
+		return;
+
+	tmp1 = buff->n;
+	while (buff->next)
+	{
+		if (cnt % 2 != 0)
+		{
+			tmp2 = (buff->next)->n;
+			(buff->next)->n = tmp1;
+		}
+		else
+		{
+			tmp1 = (buff->next)->n;
+			(buff->next)->n = tmp2;
+		}
+		buff = buff->next;
+		cnt ++;
+	}
+	(*head)->n = ((cnt % 2 == 0) ? tmp2 : tmp1);
+}
