@@ -18,7 +18,7 @@ void pchar_fct(stack_t **head, unsigned int line_number)
 	}
 
 	num = (*head)->n;
-	if ( num < 32 || num > 127) /*if check problm just check num > 127*/
+	if (num < 32 || num > 127) /*if check problm just check num > 127*/
 	{
 		free_stack(*head);
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
@@ -40,7 +40,7 @@ void pstr_fct(stack_t **head, unsigned int line_number)
 	int num;
 	(void) line_number;
 
-	while(buff)
+	while (buff)
 	{
 		num = buff->n;
 		if (num == 0 || num > 127)

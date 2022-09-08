@@ -2,8 +2,8 @@
 #include <stdio.h>
 
 /**
- * print_error - print error to stderr 
- * @msg: the msg to be printed 
+ * print_error - print error to stderr
+ * @msg: the msg to be printed
  * Return: nothing
  */
 void print_error(char *msg)
@@ -59,7 +59,7 @@ void swap_fct(stack_t **head, unsigned int line_number)
 	{
 		if (*head)
 			free(*head);
-		fprintf(stderr, 
+		fprintf(stderr, \
 			"L%d: can't swap, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
@@ -82,7 +82,7 @@ void add_fct(stack_t **head, unsigned int line_number)
 	{
 		if (*head)
 			free(*head);
-		fprintf(stderr, 
+		fprintf(stderr, \
 			"L%d: can't add, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}

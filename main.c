@@ -1,9 +1,8 @@
 #include "monty.h"
-#define _GNU_SOURCE
 #include <stdio.h>
 #include <unistd.h>
-#include <sys/types.h>                                                                                                                          
-#include <sys/stat.h>                                                                                                                           
+#include <sys/types.h>
+#include <sys/stat.h>
 #include <fcntl.h>
 
 char stack_type[6] = "stack";
@@ -12,8 +11,7 @@ char stack_type[6] = "stack";
  * main -  the main function
  * @argc: number of args
  * @argv: array of args in str format
- * 
- * Return: EXIT_SUCCESS 
+ * Return: EXIT_SUCCESS
  */
 int main(int argc, char **argv)
 {
@@ -31,7 +29,7 @@ int main(int argc, char **argv)
 		fprintf(stderr, "Error: Can't open file %s\n", file);
 		exit(EXIT_FAILURE);
 	}
-	while((fgets(line, sizeof(line), fp)) != NULL)
+	while ((fgets(line, sizeof(line), fp)) != NULL)
 	{
 		lnum++;
 		strtok(line, "\n");

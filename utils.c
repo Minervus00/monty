@@ -92,7 +92,7 @@ int add_dnodeint_end(stack_t **head, unsigned int n)
 void push_fct(stack_t **head, unsigned int argint)
 {
 	/*printf("type = %s\n", stack_type);*/
-	if(!strcmp(stack_type, "stack"))
+	if (!strcmp(stack_type, "stack"))
 	{
 		add_dnodeint(head, argint);
 		return;

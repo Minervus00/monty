@@ -26,7 +26,7 @@ void sub_fct(stack_t **head, unsigned int line_number)
 	{
 		if (*head)
 			free(*head);
-		fprintf(stderr, 
+		fprintf(stderr, \ 
 			"L%d: can't sub, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
@@ -50,7 +50,7 @@ void div_fct(stack_t **head, unsigned int line_number)
 	{
 		if (*head)
 			free(*head);
-		fprintf(stderr, 
+		fprintf(stderr, \
 			"L%d: can't div, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
@@ -82,7 +82,7 @@ void mul_fct(stack_t **head, unsigned int line_number)
 	{
 		if (*head)
 			free(*head);
-		fprintf(stderr, 
+		fprintf(stderr, \
 			"L%d: can't mul, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
@@ -106,7 +106,7 @@ void mod_fct(stack_t **head, unsigned int line_number)
 	{
 		if (*head)
 			free(*head);
-		fprintf(stderr, 
+		fprintf(stderr, \
 			"L%d: can't mod, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
