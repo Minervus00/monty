@@ -9,11 +9,12 @@ int checkop(stack_t **head, char *line, instruction_t *ops, int lnum)
 	unsigned int j, n;
 
 	/* Check if line is not empty */
-	if ((tok = strtok_r(rest, " ", &rest)) && strcmp(tok, "\n"))
+	tok = strtok_r(rest, " ", &rest);
+	if ((tok) && strcmp(tok, "\n"))
 	{
 		if ((int) tok[0] == 35) /* (int) '#' -> 35 | to skip comments*/
 			return (0);
-		for(j = 0; (buff = ops[j].opcode); j++)
+		for (j = 0; (buff = ops[j].opcode); j++)
 		{
 			/*printf("tok = %s : opc = %s\n", tok, buff);*/
 			if (!strcmp(tok, buff))
@@ -41,10 +42,10 @@ int checkop(stack_t **head, char *line, instruction_t *ops, int lnum)
 }
 
 /**
- * execute_line - process each line 
+ * execute_line - process each line
  * @line: current line in file
  * @lnum: line number in file
- * Return: int 
+ * Return: int
  */
 int execute_line(stack_t **head, char *line, int lnum)
 {
@@ -65,5 +66,5 @@ int execute_line(stack_t **head, char *line, int lnum)
 		{NULL, NULL}
 	};
 
-	return(checkop(head, line, ops, lnum));
+	return (checkop(head, line, ops, lnum));
 }
