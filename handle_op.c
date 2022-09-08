@@ -3,6 +3,14 @@
 #include <stdio.h>
 #include <ctype.h>
 
+/**
+ * checkop - search and execute opcode in lines 
+ * @head: the head
+ * @line: the current line
+ * @ops: an array of opcodes
+ * @lnum: line_num
+ * Return: int
+ */
 int checkop(stack_t **head, char *line, instruction_t *ops, int lnum)
 {
 	char *tok, *buff, *rest = line;
@@ -43,6 +51,7 @@ int checkop(stack_t **head, char *line, instruction_t *ops, int lnum)
 
 /**
  * execute_line - process each line
+ * @head: head
  * @line: current line in file
  * @lnum: line number in file
  * Return: int

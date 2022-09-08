@@ -53,14 +53,13 @@ void pint_fct(stack_t **head, unsigned int line_number)
   */
 void swap_fct(stack_t **head, unsigned int line_number)
 {
-	int tmp;
+	int tmp = line_number;
 
 	if ((*head) == NULL || (*head)->next == NULL)
 	{
 		if (*head)
 			free(*head);
-		fprintf(stderr, \
-			"L%d: can't swap, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't swap, stack too short\n", tmp);
 		exit(EXIT_FAILURE);
 	}
 	tmp = (*head)->n;
@@ -77,13 +76,13 @@ void swap_fct(stack_t **head, unsigned int line_number)
 void add_fct(stack_t **head, unsigned int line_number)
 {
 	stack_t *tmp;
+	int lnum = line_number;
 
 	if ((*head) == NULL || (*head)->next == NULL)
 	{
 		if (*head)
 			free(*head);
-		fprintf(stderr, \
-			"L%d: can't add, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't add, stack too short\n", lnum);
 		exit(EXIT_FAILURE);
 	}
 	tmp = *head;
