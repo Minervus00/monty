@@ -9,7 +9,7 @@
  */
 void print_error(char *msg)
 {
-	fprintf(stderr, msg);
+	write(2, msg, strlen(msg));
 	exit(EXIT_FAILURE);
 }
 
