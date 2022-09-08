@@ -17,7 +17,7 @@ int checkop(stack_t **head, char *line, instruction_t *ops, int lnum)
 	unsigned int j, n;
 
 	/* Check if line is not empty */
-	tok = strtok_r(rest, " ", &rest);
+	tok = strtok(rest, " ");
 	if ((tok) && strcmp(tok, "\n"))
 	{
 		if ((int) tok[0] == 35) /* (int) '#' -> 35 | to skip comments*/
@@ -31,7 +31,7 @@ int checkop(stack_t **head, char *line, instruction_t *ops, int lnum)
 				/*j == 0 <=> tok is push th*/
 				if (j == 0)
 				{
-					tok = strtok_r(rest, " ", &rest);
+					tok = strtok(NULL, " ");
 					if (isdigit(tok[0]))
 						n = atoi(tok);
 					ops[j].f(head, n);
