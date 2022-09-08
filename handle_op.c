@@ -4,7 +4,7 @@
 #include <ctype.h>
 
 /**
- * checkop - search and execute opcode in lines 
+ * checkop - search and execute opcode in lines
  * @head: the head
  * @line: the current line
  * @ops: an array of opcodes
