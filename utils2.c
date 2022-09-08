@@ -47,12 +47,12 @@ void pint_fct(stack_t **head, unsigned int line_number)
 	printf("%d\n", (*head)->n);
 }
 
- /**
-  * swap_fct - swaps the top two elements of the stack
-  * @head: the head
-  * @line_number: line_num
-  * Return: nothing
-  */
+/**
+ * swap_fct - swaps the top two elements of the stack
+ * @head: the head
+ * @line_number: line_num
+ * Return: nothing
+ */
 void swap_fct(stack_t **head, unsigned int line_number)
 {
 	int tmp = line_number;
