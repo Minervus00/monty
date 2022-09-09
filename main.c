@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 	unsigned int lnum = 0;
 
 	if (argc != 2)
-		print_error("USAGE: monty file");
+		print_error("USAGE: monty file\n");
 	file = argv[1];
 	fp = fopen(file, "r");
 	if (fp == NULL)

@@ -4,6 +4,50 @@
 #include <ctype.h>
 
 /**
+ * push_error - prints error when bad usage
+ * @head: head
+ * @lnum: line_num
+ * Return: nothing
+ */
+void push_error(stack_t **head, int lnum)
+{
+	free_stack(*head);
+	fprintf(stderr, "L%d: usage: push integer\n", lnum);
+	exit(EXIT_FAILURE);
+}
+
+/**
+ * isnumber - check if string arg is a valid number
+ * @str: a string
+ * Return: 1 if a valid integer, 0 otherwise
+ */
+int isnumber(char *str)
+{
+	char c;
+	int h = 0;
+
+	if (str == NULL)
+		return (0);
+	while (str[h])
+	{
+		c = str[h];
+		if (c < '0' || c > '9')
+		{
+			if (h == 0 && (c == '-' || c == '+'))
+			{
+				h++;
+				continue;
+			}
+			break;
+		}
+		h++;
+		if (str[h] == '\0')
+			return (1);
+	}
+	return (0);
+}
+
+/**
  * checkop - search and execute opcode in lines
  * @head: the head
  * @line: the current line
@@ -20,21 +64,26 @@ int checkop(stack_t **head, char *line, instruction_t *ops, int lnum)
 	tok = strtok(rest, " ");
 	if ((tok) && strcmp(tok, "\n"))
 	{
-		if ((int) tok[0] == 35) /* (int) '#' -> 35 | to skip comments*/
+		if (tok[0] == '#') /*to skip comments*/
 			return (0);
 		for (j = 0; (buff = ops[j].opcode); j++)
 		{
 			/*printf("tok = %s : opc = %s\n", tok, buff);*/
 			if (!strcmp(tok, buff))
 			{
-				/*printf("found !\n");*/
-				/*j == 0 <=> tok is push th*/
+				/*j == 0 <=> tok is push*/
 				if (j == 0)
 				{
+					/* -> Mettre la partie qui gère push dans une fct!*/
 					tok = strtok(NULL, " ");
-					if (isdigit(tok[0]))
+					/*printf("tok = %s\n", tok);*/
+					if (isnumber(tok))
+					{
 						n = atoi(tok);
-					ops[j].f(head, n);
+						ops[j].f(head, n);
+						return (0);
+					}
+					push_error(head, lnum);
 					return (0);
 				}
 				ops[j].f(head, lnum);
