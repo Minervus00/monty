@@ -1,5 +1,4 @@
 #include "monty.h"
-#include <stdio.h>
 
 /**
  * pchar_fct - prints the char at the head of stack
@@ -108,4 +107,17 @@ void rotr_fct(stack_t **head, unsigned int line_number)
 		cnt++;
 	}
 	(*head)->n = ((cnt % 2 == 0) ? tmp2 : tmp1);
+}
+
+/**
+ * queue_fct - rotates the stack to the bottom
+ * @head: the head
+ * @line_number: line_num
+ * Return: nothing
+ */
+void queue_fct(stack_t **head, unsigned int line_number)
+{
+	(void) line_number;
+	*head = *head;
+	stack_type = "queue";
 }

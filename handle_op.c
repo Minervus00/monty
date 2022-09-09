@@ -1,7 +1,18 @@
 #include "monty.h"
-#include <string.h>
-#include <stdio.h>
 #include <ctype.h>
+
+/**
+ * stack_fct - rotates the stack to the bottom
+ * @head: the head
+ * @line_number: line_num
+ * Return: nothing
+ */
+void stack_fct(stack_t **head, unsigned int line_number)
+{
+	(void) line_number;
+	*head = *head;
+	stack_type = "stack";
+}
 
 /**
  * push_error - prints error when bad usage
@@ -123,6 +134,8 @@ int execute_line(stack_t **head, char *line, int lnum)
 		{"pstr", pstr_fct},
 		{"rotl", rotl_fct},
 		{"rotr", rotr_fct},
+		{"stack", stack_fct},
+		{"queue", queue_fct},
 		{NULL, NULL}
 	};
 

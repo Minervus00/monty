@@ -1,6 +1,4 @@
 #include "monty.h"
-#include <string.h>
-#include <stdio.h>
 
 /**
  * pall_fct - prints all the elements of a stack or queue

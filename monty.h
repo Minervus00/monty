@@ -2,6 +2,8 @@
 #define MONTY_H
 
 #include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 
 
 /**
@@ -20,7 +22,7 @@ typedef struct stack_s
         struct stack_s *next;
 } stack_t;
 
-extern char stack_type[6]; /*stack by default, or queue*/
+extern char *stack_type; /*stack by default, or queue*/
 
 /**
  * struct instruction_s - opcode and its function
@@ -55,6 +57,8 @@ void pchar_fct(stack_t **head, unsigned int line_number);
 void pstr_fct(stack_t **head, unsigned int line_number);
 void rotl_fct(stack_t **head, unsigned int line_number);
 void rotr_fct(stack_t **head, unsigned int line_number);
+void stack_fct(stack_t **head, unsigned int line_number);
+void queue_fct(stack_t **head, unsigned int line_number);
 void free_stack(stack_t *head);
 
 #endif /* MONTY_H */

@@ -1,12 +1,10 @@
 #include "monty.h"
-#include <stdio.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
-#include <string.h>
 
-char stack_type[6] = "stack";
+char *stack_type = "stack";
 
 /**
  * main -  the main function
