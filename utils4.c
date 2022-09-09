@@ -44,7 +44,7 @@ void pstr_fct(stack_t **head, unsigned int line_number)
 	{
 		num = buff->n;
 		if (num <= 0 || num > 127)
-			return;
+			break;
 		printf("%c", num);
 		buff = buff->next;
 	}
