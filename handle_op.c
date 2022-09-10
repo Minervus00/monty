@@ -2,7 +2,7 @@
 #include <ctype.h>
 
 /**
- * stack_fct - rotates the stack to the bottom
+ * stack_fct - sets the format of data to stack (LIFO)
  * @head: the head
  * @line_number: line_num
  * Return: nothing
@@ -85,7 +85,6 @@ int checkop(stack_t **head, char *line, instruction_t *ops, int lnum)
 				/*j == 0 <=> tok is push*/
 				if (j == 0)
 				{
-					/* -> Mettre la partie qui gère push dans une fct!*/
 					tok = strtok(NULL, " ");
 					/*printf("tok = %s\n", tok);*/
 					if (isnumber(tok))

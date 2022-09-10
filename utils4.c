@@ -110,7 +110,7 @@ void rotr_fct(stack_t **head, unsigned int line_number)
 }
 
 /**
- * queue_fct - rotates the stack to the bottom
+ * queue_fct - sets the format of data to queue (FIFO)
  * @head: the head
  * @line_number: line_num
  * Return: nothing
