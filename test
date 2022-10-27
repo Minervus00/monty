@@ -1,9 +1,7 @@
-
-push 7
-push 8
-push 9
-			bobyyy
-push 0
-pall
-rotr
-pall
+push 108
+push 111
+push 111
+push 104
+push 99
+push 83
+pstr
